@@ -38,7 +38,7 @@
   
 ![접근방식](https://user-images.githubusercontent.com/28488288/107988305-0d9cc700-7013-11eb-855b-4be4221d1a88.png)
 
-` 날씨 시간표는 크게 클라이언트, 서버, DB, 동네예보조회서비스 API로 구성됨  `
+` 보안성 향상  `
 
 </div>
 
