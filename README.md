@@ -108,12 +108,12 @@
 ```
 
 ### :exclamation: 자세한 내용은 계획서를 확인해주세요. :exclamation:
-#### :ledger: [보고서](https://github.com/OtterBK/WeatherScheduler/tree/master/%EB%B3%B4%EA%B3%A0%EC%84%9C)
+#### :ledger: [날씨 시간표 계획서](https://github.com/OtterBK/WeatherScheduler/tree/master/%EB%B3%B4%EA%B3%A0%EC%84%9C)
 
 
 
 #### 📹 실행 예시
-![유튜브](http://img.youtube.com/vi/FGQQyYeYFJo/0.jpg)](https://youtu.be/FGQQyYeYFJo?t=0s) 
+[![유튜브](http://img.youtube.com/vi/FGQQyYeYFJo/0.jpg)](https://youtu.be/FGQQyYeYFJo?t=0s) 
 
 
 
