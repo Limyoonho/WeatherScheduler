@@ -81,13 +81,6 @@
 
 </div>
 
-#### 🖇 클래스 다이어그램 다이어그램 (Data Flow Diagrams)
-<div align=center>
-  
-![클래스다이어그램](https://user-images.githubusercontent.com/28488288/107988914-5d2fc280-7014-11eb-8c7c-3347fb590fbe.png)
-
-</div>
-
 <br>
 
 #### 🛰 클라이언트
