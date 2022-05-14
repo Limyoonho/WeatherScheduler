@@ -129,8 +129,8 @@ public class Weather {
 
 			parseCatecory.add("POP"); //강수확률, 영하일시 눈올 확률
 			parseCatecory.add("REH"); //습도
-			parseCatecory.add("R06"); //강수량
-			parseCatecory.add("S06"); //적설량
+			parseCatecory.add("PCP"); //강수량
+			parseCatecory.add("SNO"); //적설량	
 			parseCatecory.add("T3H"); //현재 기온
 			parseCatecory.add("TMN"); //최저기온
 			parseCatecory.add("TMX"); //최고기온
@@ -208,9 +208,9 @@ public class Weather {
 	        /* 카테고리 목록
 	          POP	강수확률	 %                         - 필요
 	          PTY	강수형태	코드값
-	          R06	6시간 강수량	범주 (1 mm)			   - 필요
+	          PCP	6시간 강수량	범주 (1 mm)			   - 필요
 	          REH	습도	 %                             - 필요
-	          S06	6시간 신적설	범주(1 cm)              - 필요
+	          SNO	6시간 신적설	범주(1 cm)              - 필요
 	          SKY	하늘상태	코드값
 	          T3H	3시간 기온	 ℃                                                        - 필요
 	          TMN	아침 최저기온	 ℃                                               - 필요
@@ -228,8 +228,8 @@ public class Weather {
 				{"baseDate":20151021,"baseTime":"0500","category":"POP","fcstDate":20151021,"fcstTime":"0900","fcstValue":-1,"nx":1,"ny":1},
 				{"baseDate":20151021,"baseTime":"0500","category":"REH","fcstDate":20151021,"fcstTime":"0900","fcstValue":-1,"nx":1,"ny":1},
 				{"baseDate":20151021,"baseTime":"0500","category":"PTY","fcstDate":20151021,"fcstTime":"0900","fcstValue":0,"nx":1,"ny":1},
-				{"baseDate":20151021,"baseTime":"0500","category":"R06","fcstDate":20151021,"fcstTime":"0900","fcstValue":0,"nx":1,"ny":1},
-				{"baseDate":20151021,"baseTime":"0500","category":"S06","fcstDate":20151021,"fcstTime":"0900","fcstValue":0,"nx":1,"ny":1},
+				{"baseDate":20151021,"baseTime":"0500","category":"PCP","fcstDate":20151021,"fcstTime":"0900","fcstValue":0,"nx":1,"ny":1},
+				{"baseDate":20151021,"baseTime":"0500","category":"SNO","fcstDate":20151021,"fcstTime":"0900","fcstValue":0,"nx":1,"ny":1},
 				{"baseDate":20151021,"baseTime":"0500","category":"TMN","fcstDate":20151021,"fcstTime":"0900","fcstValue":0,"nx":1,"ny":1},
 				{"baseDate":20151021,"baseTime":"0500","category":"TMX","fcstDate":20151021,"fcstTime":"0900","fcstValue":0,"nx":1,"ny":1},
 				{"baseDate":20151021,"baseTime":"0500","category":"SKY","fcstDate":20151021,"fcstTime":"0900","fcstValue":1,"nx":1,"ny":1},
