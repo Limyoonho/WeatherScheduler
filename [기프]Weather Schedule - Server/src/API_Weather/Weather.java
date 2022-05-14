@@ -17,7 +17,7 @@ import Server.Server;
 
 /*
  동네 예보 조회서비스API 사용
- https://www.data.go.kr/dataset/15000099/openapi.do
+ http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst
  출처
 */
 
@@ -25,7 +25,7 @@ public class Weather {
 	//API 키 세팅
 	public static List<LinkedHashMap<String, String>> getWeather(String cityName, String townName) {
 	
-		String key = "pZIM3WTjj9tP%2FmyJtWPrKKnuOCAmpzNfOmj%2BjxYX0whNj899DFHonv%2BN4awa%2BVeHWOFA2ZVHbku691BHkjxWfA%3D%3D"; // 요청키
+		String key = "QG3VtP5zxrRDQPNOCaYpWVOFMRMwzZfU0wrmUttXxsWWD%2BvFmoAD6gnjsHcuchAGOvtXwKha8aXDGf%2BUVYq%2FTw%3D%3D"; // 요청키
 		
 		try {
 			String[] pos = Server.database.getPos(cityName, townName);
@@ -84,7 +84,7 @@ public class Weather {
 	        requestUrl.append("&" + URLEncoder.encode("base_date","UTF-8") + "=" + URLEncoder.encode(baseDate, "UTF-8")); // 조회할 날짜
 	        requestUrl.append("&" + URLEncoder.encode("base_time","UTF-8") + "=" + URLEncoder.encode(baseTime, "UTF-8")); // 조회할 시간 [AM 02시부터 3시간 단위] 
 	        requestUrl.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("999", "UTF-8"));	// 응답 메세지 타입
-	        requestUrl.append("&" + URLEncoder.encode("dataType","UTF-8") + "=" + URLEncoder.encode("json", "UTF-8"));	// 응답 메세지는 Json 형태로
+	        requestUrl.append("&" + URLEncoder.encode("dataType","UTF-8") + "=" + URLEncoder.encode("JSON", "UTF-8"));	// 응답 메세지는 Json 형태로
 	        
 	        //String requestUrl = "http://newsky2.kma.go.kr/service/SecndSrtpdFrcstInfoService2/ForecastSpaceData?"
 	        //		+ "ServiceKey="+key+"nx="+posX+"ny="+posY+"base_date="+baseDate+"base_time="+baseTime+"_type="+type; //테스트로 UTF-8 인코딩 없이 실행

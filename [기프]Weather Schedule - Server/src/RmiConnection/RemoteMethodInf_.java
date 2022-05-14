@@ -11,7 +11,7 @@ import java.util.List;
  패키지를 포함한 모든 경로가 동일해야한다는 뜻임 
  */
 
-public interface RemoteMethodInf extends Remote{
+public interface RemoteMethodInf_ extends Remote{
 	
 	public List<LinkedHashMap<String, String>> getWeatherData(String ip, String cityName, String townName) throws RemoteException;
 	public boolean checkConnect(String ip) throws RemoteException;

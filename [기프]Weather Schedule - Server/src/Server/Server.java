@@ -26,7 +26,7 @@ public class Server {
 	
 	public Server server; //서버
 	
-	RemoteMethodInf rm; //서버 RMI 접근용
+	RemoteMethod rm; //서버 RMI 접근용
 	//
 	////GUI관련
 	JFrame frame;

@@ -2,7 +2,7 @@ package Addon;
 
 import java.awt.Color;
 
-public class MyColor { //색 설정용
+public class MyColor_ { //색 설정용
 
 	public static Color black = new Color(0,0,0);
 	public static Color darkAqua = new Color(33,204,240);
