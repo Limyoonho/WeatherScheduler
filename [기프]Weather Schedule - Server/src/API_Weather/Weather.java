@@ -43,8 +43,8 @@ public class Weather {
 			String day = dateFormat.format(System.currentTimeMillis()); //오늘자
 			String time = timeFormat.format(System.currentTimeMillis()); //현재 시각
 			
-			//day = "20191213";
-			//time = "0710"; //테스트용 강제 시간 설정
+			//day = "20220514";
+			//time = "1730"; //테스트용 강제 시간 설정
 			
 			double tempTime = Double.valueOf(time); //가장 최근에 발표된 예보를 가져올 것임
 			double c = tempTime / 300; //3시간마다 발표되므로 300으로 나눔
@@ -77,13 +77,13 @@ public class Weather {
 			String baseTime = time;	//가져올 정보의 발표 시간
 		
 			//요청시 UTF-8로 인코딩해야함
-	        StringBuilder requestUrl = new StringBuilder("http://apis.data.go.kr/1360000/VilageFcstInfoService/getVilageFcst");
+	        StringBuilder requestUrl = new StringBuilder("http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst");
 	        requestUrl.append("?" + URLEncoder.encode("serviceKey","UTF-8") + "="+key);
 	        requestUrl.append("&" + URLEncoder.encode("nx","UTF-8") + "=" + URLEncoder.encode(posX, "UTF-8")); //경도 좌표
 	        requestUrl.append("&" + URLEncoder.encode("ny","UTF-8") + "=" + URLEncoder.encode(posY, "UTF-8")); //위도 좌표
 	        requestUrl.append("&" + URLEncoder.encode("base_date","UTF-8") + "=" + URLEncoder.encode(baseDate, "UTF-8")); // 조회할 날짜
 	        requestUrl.append("&" + URLEncoder.encode("base_time","UTF-8") + "=" + URLEncoder.encode(baseTime, "UTF-8")); // 조회할 시간 [AM 02시부터 3시간 단위] 
-	        requestUrl.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("999", "UTF-8"));	// 응답 메세지 타입
+	        requestUrl.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("1000", "UTF-8"));	// 응답 메세지 타입
 	        requestUrl.append("&" + URLEncoder.encode("dataType","UTF-8") + "=" + URLEncoder.encode("JSON", "UTF-8"));	// 응답 메세지는 Json 형태로
 	        
 	        //String requestUrl = "http://newsky2.kma.go.kr/service/SecndSrtpdFrcstInfoService2/ForecastSpaceData?"
@@ -97,7 +97,7 @@ public class Weather {
 	        //System.out.println(url); //요청한 메세지 확인용
 	        HttpURLConnection conn = (HttpURLConnection) url.openConnection(); //웹을 통해 데이터를 주고받기 위해 사용
 	        conn.setRequestMethod("GET"); //get방식 통신
-	        conn.setRequestProperty("Content-type", "application/json"); //응답 데이터를 Json 형식의 타입으로 요청
+	        conn.setRequestProperty("Content-type", "application/JSON"); //응답 데이터를 Json 형식의 타입으로 요청
 	        //System.out.println("Response code: " + conn.getResponseCode()); //응답 코드 확인용
 	        
 	        BufferedReader rd;

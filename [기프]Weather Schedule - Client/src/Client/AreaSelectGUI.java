@@ -137,7 +137,7 @@ public class AreaSelectGUI extends JFrame {
 	private boolean saveAreaData(String cityName, String townName) { //설정한 도시, 타운값으로 재저장
 		
 		try {
-			File file = new File("./area.txt");  //경로
+			File file = new File("C:\\Users\\youno\\git\\WeatherScheduler\\[기프]Weather Schedule - Client/area.txt");  //경로
 			FileWriter fw = new FileWriter(file);
 			BufferedWriter bw = new BufferedWriter(fw);
 			bw.write(cityName+","+townName); //지역정보 저장

@@ -13,7 +13,7 @@ public class Client {
 	public static RemoteMethodInf server; //서버와 RMI통신을 위한 객체 주소 저
 	public static String cityName = "경산시"; //도시명 저장공간
 	public static String townName = "진량읍"; //동네명 저장공간
-	public static String ip = ""; //IP저장공간
+	public static String ip = "127.0.0.1"; //IP저장공간
 
 	public static void main(String args[]) {
 		try {
