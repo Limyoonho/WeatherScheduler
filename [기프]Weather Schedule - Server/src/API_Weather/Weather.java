@@ -130,8 +130,8 @@ public class Weather {
 			parseCatecory.add("POP"); //강수확률, 영하일시 눈올 확률
 			parseCatecory.add("REH"); //습도
 			parseCatecory.add("PCP"); //강수량
-			parseCatecory.add("SNO"); //적설량	
-			parseCatecory.add("T3H"); //현재 기온
+			parseCatecory.add("SNO"); //적설량
+			parseCatecory.add("TMP"); //현재 기온
 			parseCatecory.add("TMN"); //최저기온
 			parseCatecory.add("TMX"); //최고기온
 			parseCatecory.add("WSD"); //풍속

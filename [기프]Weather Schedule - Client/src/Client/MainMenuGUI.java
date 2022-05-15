@@ -137,7 +137,7 @@ public class MainMenuGUI extends JFrame {
 		String mon = dayValue.substring(4,6)+"월";
 		String day = dayValue.substring(6,8)+"일";
 		todayPanel.btn_day.setText(year+" "+mon+" "+day);
-		todayPanel.lbl_nowTempe.setText(now_weatherMap.get("T3H")+"º"); //현재 온도 설정
+		todayPanel.lbl_nowTempe.setText(now_weatherMap.get("TMP")+"º"); //현재 온도 설정
 		todayPanel.lbl_POP.setText(now_weatherMap.get("POP")+"%"); //현재 강수확률 설정
 		todayPanel.lbl_REH.setText(now_weatherMap.get("REH")+"º"); //현재 습도 설정
 		todayPanel.lbl_WSD.setText(now_weatherMap.get("WSD")+"m/s"); //현재 풍속 설정
@@ -221,28 +221,28 @@ public class MainMenuGUI extends JFrame {
 	
 	private WeatherInfo createWeatherInfo(String parseDay, String parseTime, LinkedHashMap<String, String> parseMap) { //기상정보 클래스 생성
 		WeatherInfo wi = null; 
-		String T3H = parseMap.get("T3H"); //파싱한 값들
+		String TMP = parseMap.get("TMP"); //파싱한 값들
 		String POP = parseMap.get("POP");
 		String REH = parseMap.get("REH");
 		String SKY = parseMap.get("SKY");
 		String PTY = parseMap.get("PTY");
 		String WSD = parseMap.get("WSD");
 		
-		if(T3H == null || POP == null || REH == null ||SKY == null ||PTY == null ||WSD == null) {
+		if(TMP == null || POP == null || REH == null ||SKY == null ||PTY == null ||WSD == null) {
 			//필요한 카테고리중 하나라도 빠져있다면 해당 정보 패스함
 			System.out.println(parseDay+" - "+parseTime+" 에서 파싱문제 발생");
 		} else {
-			wi = new WeatherInfo(parseDay, parseTime, T3H, POP, REH, SKY, PTY, WSD); //날씨 정보 만들어서
+			wi = new WeatherInfo(parseDay, parseTime, TMP, POP, REH, SKY, PTY, WSD); //날씨 정보 만들어서
 		}
 		return wi;
 	}
 	
-	private String getWeatherState(String pty, String sky) {
-		//pty //테스트용
-		//sky = "2"; //테스트용
+	private String getWeatherState(String PTY, String SKY) {
+		//PTY //테스트용
+		//SKY = "2"; //테스트용
 		String weatherState = "clear";
-		if (!pty.equalsIgnoreCase("0")) { //하늘에서 뭔가 오고 있다면
-			switch (pty) {
+		if (!PTY.equalsIgnoreCase("0")) { //하늘에서 뭔가 오고 있다면
+			switch (PTY) {
 			case "1":
 				weatherState = "rain";
 				break; // 비옴
@@ -256,11 +256,11 @@ public class MainMenuGUI extends JFrame {
 				weatherState = "rain";
 				break; // 소나기
 			default:
-				pty = "0";
+				PTY = "0";
 			}
 		}
-		if (pty.equalsIgnoreCase("0")) { //비나 눈이 오지 않으면
-			switch (sky) {
+		if (PTY.equalsIgnoreCase("0")) { //비나 눈이 오지 않으면
+			switch (SKY) {
 			case "1":
 				weatherState = "clear";
 				break; // 맑음
@@ -293,17 +293,17 @@ public class MainMenuGUI extends JFrame {
 	private class WeatherInfo{
 		String day; //날씨 정보 날짜
 		String time; //날씨 정보 시간
-		String T3H; //기온
+		String TMP; //기온
 		String POP; //강수확률
 		String REH; //습도
 		String SKY; //하늘상태
 		String PTY; //강수형태
 		String WSD; //강수형태
 		
-		public WeatherInfo(String day, String time, String T3H, String POP, String REH, String SKY, String PTY, String WSD) { //채팅방 정보 생성
+		public WeatherInfo(String day, String time, String TMP, String POP, String REH, String SKY, String PTY, String WSD) { //채팅방 정보 생성
 			this.day = day; //초기화
 			this.time = time;
-			this.T3H = T3H;
+			this.TMP = TMP;
 			this.POP = POP;
 			this.REH = REH;
 			this.PTY = PTY;
@@ -345,13 +345,13 @@ public class MainMenuGUI extends JFrame {
 			lblTime.setFont(new Font("맑은 고딕", Font.BOLD, 12));
 			pane.add(lblTime);
 			
-			JLabel lblT3H = new JLabel(T3H+"º"); //기온 표시 라벨
-			lblT3H.setForeground(MyColor.white);
-			lblT3H.setBounds(70, 37, 100, 35);
-			lblT3H.setFont(new Font("맑은 고딕", Font.BOLD, 35));
-			lblT3H.setForeground(MyColor.lightBlack);
-			lblT3H.setVerticalAlignment(JLabel.CENTER);
-			pane.add(lblT3H);
+			JLabel lblTMP = new JLabel(TMP+"º"); //기온 표시 라벨
+			lblTMP.setForeground(MyColor.white);
+			lblTMP.setBounds(70, 37, 100, 35);
+			lblTMP.setFont(new Font("맑은 고딕", Font.BOLD, 35));
+			lblTMP.setForeground(MyColor.lightBlack);
+			lblTMP.setVerticalAlignment(JLabel.CENTER);
+			pane.add(lblTMP);
 			
 			
 			JLabel lblState = new JLabel(weatherToKor(weatherState)); //기온 표시 라벨
@@ -460,7 +460,7 @@ public class MainMenuGUI extends JFrame {
 		JLabel lbl_nowTempe; //현재 기온
 		JLabel lbl_TMX; //최고기온
 		JLabel lbl_TMN; //최저기온
-		JLabel lbl_POP; //강수량
+		JLabel lbl_POP; //강수확률
 		JLabel lbl_REH; //습도
 		JLabel lbl_WSD;//풍속
 		JScrollPane pane_scorll; //스크롤 
